@@ -25,7 +25,7 @@
     error.value = null
     dataimage.value =[]
     if (ville.value) {
-      url.value = `http://api.openweathermap.org/data/2.5/weather?q=${ville.value}&appid=${api_key_weather.value}&units=metric`
+      url.value = `https://api.openweathermap.org/data/2.5/weather?q=${ville.value}&appid=${api_key_weather.value}&units=metric`
       try {
         const response = await axios.get(url.value)
         dataweather.value = await response.data
