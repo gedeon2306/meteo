@@ -25,7 +25,7 @@
     error.value = null
     dataweather.value =[]
     dataimage.value =[]
-    
+
     if (ville.value) {
       url.value = `https://api.openweathermap.org/data/2.5/weather?q=${ville.value}&appid=${api_key_weather.value}&units=metric`
       try {
@@ -56,7 +56,7 @@
           updateBodyBackground(dataimage.value.hits[nb.value].webformatURL)
         }
       } catch (errdataimage) {
-        console.error("Erreur lors de la récupération de l'image:", errdataimage)
+        updateBodyBackground('https://static1.mclcm.net/iod/images/v2/69/photo/394723/1280x720_80_300_000000x10x0.jpg?ts=20230228124113')
       }
     } else {
       loading.value = false
