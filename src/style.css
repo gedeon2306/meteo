@@ -1,0 +1,112 @@
+body {
+    margin: 0;
+    font-family: sans-serif;
+    background-image: url('https://static1.mclcm.net/iod/images/v2/69/photo/394723/1280x720_80_300_000000x10x0.jpg?ts=20230228124113'); /* Remplacez par le chemin de votre image */
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    transition: background-image 0.3s ease-in-out;
+}
+
+/* Ajoutez un overlay sur le body */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: -1;
+}
+
+.card {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    padding: 30px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.search-container {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.search-input {
+    flex-grow: 1;
+    padding: 10px;
+    border: none;
+    border-radius: 25px;
+    font-size: 16px;
+    margin-right: 10px; /* Ajout de la marge à droite */
+}
+
+.search-input:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+}
+
+.search-button {
+    background-color: #0d59aa;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color .5s ease;
+    /* font-size: 20px; */
+}
+
+.search-button:hover{
+    background-color: #ffffff;
+    color: #007bff;
+}
+
+.weather-info {
+    margin-top: 20px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Aligne les éléments au début (à gauche en LTR) */
+}
+
+.weather-info h2 {
+    margin-bottom: 15px;
+    text-align: center; /* Remet le titre au centre */
+    width: 100%;
+}
+
+.weather-info p {
+    margin: 5px 0;
+    text-align: left; /* Aligne le texte des paragraphes à gauche */
+    width: 100%; /* Permet aux paragraphes de prendre toute la largeur disponible */
+}
+
+.weather-icon {
+    margin-right: 5px;
+    font-size: 20px;
+}
+
+/* Loader animé circulaire */
+.loader {
+    border: 6px solid rgba(255,255,255,0.3);
+    border-top: 6px solid #0d59aa;
+    border-radius: 50%;
+    width: 48px;
+    height: 48px;
+    animation: spin 1s linear infinite;
+    margin: 30px auto;
+    display: block;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg);}
+    100% { transform: rotate(360deg);}
+}
