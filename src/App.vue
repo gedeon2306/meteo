@@ -23,7 +23,9 @@
     nb.value = Math.floor(Math.random() * 5)
     loading.value = true
     error.value = null
+    dataweather.value =[]
     dataimage.value =[]
+    
     if (ville.value) {
       url.value = `https://api.openweathermap.org/data/2.5/weather?q=${ville.value}&appid=${api_key_weather.value}&units=metric`
       try {
@@ -39,6 +41,11 @@
         }
       } finally {
         loading.value = false
+      }
+
+      if (!dataweather.value || !dataweather.value.main) {
+        updateBodyBackground('https://static1.mclcm.net/iod/images/v2/69/photo/394723/1280x720_80_300_000000x10x0.jpg?ts=20230228124113')
+        return
       }
 
       url_image.value = `https://pixabay.com/api/?key=${api_key_image.value}&q=${ville.value}&image_type=photo&pretty=true`
