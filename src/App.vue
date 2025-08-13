@@ -1,8 +1,8 @@
 <script setup lang="ts">
   import { ref } from 'vue'
   import axios from 'axios'
-  const api_key_weather = ref("a36e8d6df1dc639763c67499234631c9")
-  const api_key_image = ref("50127580-f8d33a9d65ba89083b3745706")
+  const api_key_weather = ref(import.meta.env.VITE_WEATHER_API_KEY)
+  const api_key_image = ref(import.meta.env.VITE_PIXABAY_API_KEY)
   const ville = ref('')
   const url = ref('')
   const url_image = ref('')
